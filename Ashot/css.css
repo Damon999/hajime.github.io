@@ -1,0 +1,534 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background: f2f2f2;
+	font-family: 'Quicksand', sans-serif;
+	background-color: #9D9897;
+}
+.container
+{
+	max-width: 1000px;
+	margin: 100px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+	
+}
+.card
+{
+	position: relative;
+	margin: 20px 0;
+	width: 450px;
+	height: 550px;
+	background: #fff;
+	transform-style: preserve-3d;
+	transform: perspective(2000px);
+	transition: 1s;
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5)
+		;
+}
+.card:hover
+{
+	z-index: 1000;
+	transform: perspective(2000px) rotate(-10deg)
+		;
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5)
+		;
+}
+
+.card .imgBox
+{
+	position: relative;
+	width: 100%;
+	height:100%;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	transform-origin: left;
+	z-index: 1;
+	transition: 1s;
+}
+
+.card:hover .imgBox
+{
+	transform: rotateY(-135deg);
+}
+
+.card .imgBox .img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
+}
+
+.card .details
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+
+img {
+	width: 450px;
+	height: 550px;
+}
+
+ input#menu-toggle-input {
+
+            position: fixed;
+
+            top: 30px;
+
+            right: 30px; 
+
+            display: none;
+
+            opacity: 0;
+
+            z-index: -10;
+
+}
+
+input#menu-toggle-input:checked + label .menu-toggle::before {
+
+            transform: rotate(405deg);
+
+            background-color: gray;
+
+}
+
+label .menu-toggle {
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 20px;
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            background-color: #000;
+
+            cursor: pointer;
+
+            z-index: 10;
+
+}
+
+label .menu-toggle:before {
+
+            content: '+';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            font-size: 50px;
+
+            width: 100%;
+
+            height: 100%;
+
+            color: #fff;
+
+            text-align: center;
+
+            line-height: 50px;
+
+            border-radius: 50%;
+
+            background-color: #000000;
+
+            font-weight: bold;
+
+            transition: 0.5s;
+
+}
+
+.overlay {
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 20px;
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            background-color: #000;
+
+            transition: transform 0.5s;
+
+            z-index: 7;
+
+}
+
+input#menu-toggle-input:checked + label .menu-toggle + .overlay {
+
+            transform: scale(100, 100);
+
+}
+
+        .menu {
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: auto;
+
+            z-index: 9;
+
+            visibility: hidden;
+
+}
+
+input#menu-toggle-input:checked +
+
+        label .menu-toggle +
+
+        .overlay +
+
+        .menu{
+
+            visibility: visible;
+
+}
+
+.menu ul {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            margin: 0;
+
+            padding: 0;
+
+            z-index: 9;
+
+}
+
+.menu ul li {
+
+            list-style: none;
+
+}
+
+.menu ul li a {
+
+            position: relative;
+
+            font-size: 48px;
+
+            text-decoration: none;
+
+            color: #fff;
+
+            margin: 20px 0;
+
+            display: block;
+
+            font-weight: bold;
+
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+            z-index: 9;
+
+}
+
+.menu ul li a::before {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: 5px;
+
+            left: -10px;
+
+            width: 100%;
+
+            height: 10px;
+
+            background-color: #fff;
+
+            z-index: 8;
+
+            transform: scaleX(0);
+
+            transform-origin: left;
+
+            transition: transform 0.5s;
+
+}
+
+        .menu ul li a:hover::before {
+
+            transform: scaleX(1);
+
+}    
+a#but
+{
+	position: relative;
+	display: inline-block;
+	padding: 25px 30px;
+	margin: 40px 0;
+	color: blue;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	transition: 0.5s;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+	left: 120px;
+	top: 50px;
+}
+
+a#but:hover
+{
+	background: #03e9f4;
+	color: #050801;
+	box-shadow: 0 0 5px #03e9f4,
+						  0 0 25px #03e9f4,
+						  0 0 50px #03e9f4,
+						  0 0 200px #03e9f4;
+}
+
+a#but span
+{
+	position: absolute;
+	display: block;
+}
+
+a#but span:nth-child(1)
+{
+	top: 0;
+	left: -100;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg,transparent,#03e9f4);
+	animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1
+{
+	0%
+	{
+		left: -100%;
+	}
+	50%, 100%
+	{
+		left: 100%;
+	}
+}
+
+a#but span:nth-child(2)
+{
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg,transparent,#03e9f4);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+
+@keyframes animate2
+{
+	0%
+	{
+		top: -100%;
+	}
+	50%, 100%
+	{
+		top: 100%;
+	}
+}
+a#but span:nth-child(3)
+{
+	bottom: 0%;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg,transparent,#03e9f4);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.25s;
+}
+
+@keyframes animate3
+{
+	0%
+	{
+		right: -100%;
+	}
+	50%, 100%
+	{
+		right: 100%;
+	}
+}
+a#but span:nth-child(4)
+{
+	bottom: -100%;
+	left: 0%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg,transparent,#03e9f4);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+
+@keyframes animate4
+{
+	0%
+	{
+		bottom: -100%;
+	}
+	50%, 100%
+	{
+		bottom: 100%;
+	}
+}
+a#butt
+{
+	position: relative;
+	display: inline-block;
+	padding: 25px 30px;
+	margin: 40px 0;
+	color: yellow;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	transition: 0.5s;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+	left: 120px;
+	top: 50px;
+}
+
+a#butt:hover
+{
+	background: #03e9f4;
+	color: #050801;
+	box-shadow: 0 0 5px #03e9f4,
+						  0 0 25px #03e9f4,
+						  0 0 50px #03e9f4,
+						  0 0 200px #03e9f4;
+}
+
+a#butt span
+{
+	position: absolute;
+	display: block;
+}
+
+a#butt span:nth-child(1)
+{
+	top: 0;
+	left: -100;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg,transparent,#03e9f4);
+	animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1
+{
+	0%
+	{
+		left: -100%;
+	}
+	50%, 100%
+	{
+		left: 100%;
+	}
+}
+
+a#butt span:nth-child(2)
+{
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg,transparent,#03e9f4);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+
+@keyframes animate2
+{
+	0%
+	{
+		top: -100%;
+	}
+	50%, 100%
+	{
+		top: 100%;
+	}
+}
+a#butt span:nth-child(3)
+{
+	bottom: 0%;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg,transparent,#03e9f4);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.25s;
+}
+
+@keyframes animate3
+{
+	0%
+	{
+		right: -100%;
+	}
+	50%, 100%
+	{
+		right: 100%;
+	}
+}
+a#butt span:nth-child(4)
+{
+	bottom: -100%;
+	left: 0%;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg,transparent,#03e9f4);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+
+@keyframes animate4
+{
+	0%
+	{
+		bottom: -100%;
+	}
+	50%, 100%
+	{
+		bottom: 100%;
+	}
+}
